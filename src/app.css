@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@plugin 'daisyui' {
+  themes: black --default;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+.item {
+  position: relative;
+  white-space: nowrap;
+  animation-name: scrollLeft;
+  animation-duration: 40s; /* Adjust this duration as needed */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Ensure all items have different delays for smooth animation */
+.item1 { animation-delay: calc(40s / 11 * (11 - 1) * -1); }
+.item2 { animation-delay: calc(40s / 11 * (11 - 2) * -1); }
+.item3 { animation-delay: calc(40s / 11 * (11 - 3) * -1); }
+.item4 { animation-delay: calc(40s / 11 * (11 - 4) * -1); }
+.item5 { animation-delay: calc(40s / 11 * (11 - 5) * -1); }
+.item6 { animation-delay: calc(40s / 11 * (11 - 6) * -1); }
+.item7 { animation-delay: calc(40s / 11 * (11 - 7) * -1); }
+.item8 { animation-delay: calc(40s / 11 * (11 - 8) * -1); }
+.item9 { animation-delay: calc(40s / 11 * (11 - 9) * -1); }
+.item10 { animation-delay: calc(40s / 11 * (11 - 10) * -1); }
+.item11 { animation-delay: calc(40s / 11 * (11 - 11) * -1); }
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animate-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scrollLeft 40s linear infinite; 
+}
+
